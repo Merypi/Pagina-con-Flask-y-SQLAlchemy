@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="titulo">
+        <h2>Bienvenido al Programa de asistencia de el Colegio San Miguel</h2>
+        <img class="imagen" src="/static/img/logo_colegio.png" width="800" height="100">
+        <p>Registrar asistencia</p>
+</div>
+<div id="contenedor">
+    <section class="login">
+        <div class="central">
+        <form action="{{ url_for('asistencia_curso')}}" method="POST" id="loginform">
+            <div>
+                {% if cursos is not none :%} 
+                    <label for="cursos">Cursos</label>
+                    <select id="cursos" name="cursos" width="500px">
+                        {% for curso in cursos %} 
+                                <option value="{{curso.id}}">{{ curso.anio }} {{ curso.division }}</option>
+                        {% endfor %} 
+                    </select>
+                {% endif %}
+            </div>
+            <button type="submit">Registrar asistencia</button>
+        </form>
+    </div>
+    </section>
+</div>
+    <div class="centrado">
+        <a class="resaltar" href="{{ url_for ('pagina_preceptor') }}">Volver a pagina preceptor</a> 
+    </div>
+</body>
+</html>
+<tr>
+    <td>{{ c.anio }}  </td> 
+    <td>{{ c.division }} </td>
+    <option value="1">Clase Aula</option>
+    <option value="2">Clase Ed.Física</option>
+    <td> <button type="submit" value="{{c.id}}" name="idcurso">Obtener listado</button> </td>
+    <!-- <td><input name="idcurso" type="radio" value="{{c.id}}"></td> -->
+ </tr>

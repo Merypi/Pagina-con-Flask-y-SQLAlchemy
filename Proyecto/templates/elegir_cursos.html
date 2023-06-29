@@ -1,0 +1,31 @@
+{% block content %}
+ <h1>Cursos asignados</h1>
+      <hr/>
+      <div class="container">
+      <table>
+         <thead>
+            <tr>
+               <th>Año</th>  
+               <th>Division</th>             
+            </tr>
+         </thead>
+
+         <tbody>
+            <form action="{{url_for('Mostrar_listado')}}" method="post" >
+            
+
+            {% for c in prece.curso %}
+               <tr>
+                  <td>{{ c.anio }}  </td> 
+                  <td>{{ c.division }} </td>
+                  <td> <button type="submit" value="{{c.id}}" name="idcurso">Obtener listado</button> </td>
+                  <!-- <td><input name="idcurso" type="radio" value="{{c.id}}"></td> -->
+               </tr>
+            {% endfor %}
+          
+            
+         </tbody>
+      </table>	  
+      <br><br>
+      </div>
+{% endblock %}

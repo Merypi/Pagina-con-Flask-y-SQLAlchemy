@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe detallado de asistencias de {{curso.anio}} {{curso.division}}</title>
+</head>
+      <div class="container">
+      <table>
+         <thead>
+            <tr>
+               <th>Nombre </th>  
+               <th>Apellido</th>   
+               <th>Clases Aula Presente</th>
+               <th>Clases Aula Ausente Justificadas</th>
+               <th>Clases Aula Ausente Injustificadas</th>
+               <th>Clases Ed. Física Presente</th>
+               <th>Clases Ed. Física Ausente Justificadas</th>
+               <th>Clases Ed. Física Ausente Injustificadas</th>
+               <th>Total Inasistencias</th>
+            </tr>
+         </thead>
+
+         <tbody>
+<body>
+    {% for estudiante in listado %}
+               <tr>
+                  <td>{{ estudiante.apellido}}  </td> 
+                  <td>{{ estudiante.nombre}}  </td> 
+                  <td>{{ estudiante.aula_presentes}}  </td> 
+                  <td>{{ estudiante.aula_justificadas}}  </td> 
+                  <td>{{ estudiante.aula_Injustificadas}}  </td> 
+                  <td>{{ estudiante.ef_presentes}}  </td> 
+                  <td>{{ estudiante.ef_justificadas}}  </td> 
+                  <td>{{ estudiante.ef_Injustificadas}}  </td> 
+                  <td>{{ estudiante.total}}  </td> 
+               </tr>
+    {% endfor %}
+</body>
+        </tbody>       
+    </table>	  
+<br><br>
+</div>
+</html>
+
+<!-- La aplicación muestra, de cada estudiante cantidad de
+clases de aula presente, cantidad de clases de educación
+física presente, cantidad de clases de aula ausente
+justificadas, cantidad de clases a clases de aula ausente
+injustificadas, cantidad de clases de educación física
+ausente justificadas, cantidad de clases a clases de
+educación física injustificadas y cómputo de la cantidad
+total de inasistencias.  -->

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<link href="/static/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+<script src="/static/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+<div class="card border-primary mb-3" style="max-width: 18rem;">
+    <div class="card-header">primera funcion</div>
+    <div class="card-body text-primary">
+      <h5 class="card-title">Registrar Asistencia</h5>
+      <a href="{{url_for('registrar_asistencia')}}" >presione aqui</a>
+      <p class="card-text">Registara asistencia de un curso.</p>
+    </div>
+  </div>
+  <div class="card border-secondary mb-3" style="max-width: 18rem;">
+    <div class="card-header">Listado</div>
+    <div class="card-body text-secondary">
+      <h5 class="card-title" href="{{url_for('generar_listado')}}">Obtener listado detallado</h5>
+      <a href="{{url_for('generar_listado')}}" >presione aqui</a>
+      <p class="card-text">Esta funcion le dara un listado detallado por curso.</p>
+    </div>
+  </div>  
+ 

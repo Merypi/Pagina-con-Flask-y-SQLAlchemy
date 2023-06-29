@@ -1,0 +1,27 @@
+<h1>Cursos asignados</h1>
+      <hr/>
+      <div class="container">
+
+         <tbody>
+            <form action="{{url_for('nuevaAsistencia')}}" method="post" >
+            
+            <label for="cursos">Cursos</label>
+            <select  name="idcurso" class="form-select form-select-lg mb-3">
+            <option selected>Seleccionar cursos</option>
+                {% for c in prece.curso %}      
+                <option value="{{ c.id }} ">{{ c.anio }} {{ c.division }}</option>
+                {% endfor %}
+            </select>
+            
+              <select name=clase class="form-select form-select-sm" >
+                <option selected>Seleccionar clase</option>
+                <option value="1">Aula</option>
+                <option value="2">Ed.Fisica</option>
+              </select>
+              <input type="date" id="fecha" name="fecha"><br>
+              <br>
+              <br>
+              <td> <button type="submit" name="asistencia">Registrar Asistencia</button> </td>
+      
+      </div>
+            </form>

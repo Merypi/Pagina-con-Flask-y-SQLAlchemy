@@ -1,0 +1,70 @@
+
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="/docs/5.3/assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.112.5">
+    <title>Colegio San Miguel Inicio</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
+
+<!-- <link href="/static/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> -->
+ <link rel="stylesheet" type="text/css" href="static/css/inicio.css" th:href="@{/css/index.css}">
+</head>
+
+<body>
+
+<header class="modal-dialog text-center">>
+   <div class="container-fluid">
+    <nav class="navbar bg-dark border-bottom border-bottom-dark" data-bs-theme="dark">
+      <nav class="navbar bg-body-tertiary">
+        <section>
+          <div class="card" style="width: 18rem" >
+             <img src="..\static\img\Logo.png" width="120">
+             <div class="card-body">
+               <h5 class="card-title">ACCESO AL CAMPUS VIRTUAL</h5>
+               <p class="card-text">INGRESAR COMO:</p>
+             </div>
+             <div class="card-body">
+             <a class="padre" href="{{url_for('iniciopadre')}}"> Padre, Madre o Tutor </a>
+             <br>
+             <br>
+             <a class="Preceptor" href="{{url_for('iniciopreceptor')}}"> Preceptor </a>
+             </div>
+           </div>
+        <!-- si va a enviar datos al servidor use etiqueta form, si solo va a mostrar datos use la etiqueta article-->
+        <form>
+        </form>
+       
+       </section>
+         <a class="navbar-brand">
+            <p class="text-center">Colegio San Miguel.</p>  
+          </a>
+    </nav>
+   </div>
+</header>
+
+<!-- <section>
+   <div class="card" style="width: 18rem" >
+      <img src="..\static\img\Logo.png" width="120">
+      <div class="card-body">
+        <h5 class="card-title">ACCESO AL CAMPUS VIRTUAL</h5>
+        <p class="card-text">INGRESAR COMO:</p>
+      </div>
+      <div class="card-body">
+      <a class="padre" href="{{url_for('iniciopadre')}}"> Padre, Madre o Tutor </a>
+      <br>
+      <br>
+      <a class="Preceptor" href="{{url_for('iniciopreceptor')}}"> Preceptor </a>
+      </div>
+    </div>
+ si va a enviar datos al servidor use etiqueta form, si solo va a mostrar datos use la etiqueta article-->
+ 
+
+</section> 
+</body>
+</html>

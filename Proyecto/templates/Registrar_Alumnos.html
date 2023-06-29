@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Asistencia</title>
+</head>
+<body>
+    <h1>Registrar Asistencia </h1>
+      <hr/>
+      <div class="container">
+      <table>
+         <thead>
+            <tr>
+               <th>Apellido</th>
+               <th>nombre</th>  
+               <th>Asistio</th>
+               <th>Justificacion</th>              
+            </tr>
+         </thead>
+
+         <tbody>
+            <form action="/Asistencia_generada" method="post" >
+            {% for i in longitud: %}
+               <tr>
+                  <td>{{ estudiantes[i].apellido }}</td>
+                  <td>{{ estudiantes[i].nombre }}</td>
+                  <td>
+				<select id="asistio{{i}}" name="asistio{{i}}">
+                    <option value="s">Sí</option>
+                    <option value="n">No</option>
+                </select>
+                </td>
+                <td>
+                    <input type="text" id="justificacion{{i}}" name="justificacion{{i}}" placeholder="Justificación">
+                </td>
+               </tr>
+            {% endfor %}
+            
+         </tbody>
+         <td> <button type="submit" name="faltas">Registrar Asistencia</button> </td>
+      </table>	  
+      <br><br>
+      </div>
+</body>
+    </form>
+</html>
