@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+  <script src="/static/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <title>Registrar Asistencia</title>
 </head>
 <body>
+   {% extends "base_template.html" %}
+   {% block content %}
     <h1>Registrar Asistencia </h1>
       <hr/>
       <div class="container">
-      <table>
+         <table class="table table-dark table-striped">
          <thead>
             <tr>
                <th>Apellido</th>
@@ -26,10 +31,11 @@
                   <td>{{ estudiantes[i].apellido }}</td>
                   <td>{{ estudiantes[i].nombre }}</td>
                   <td>
-				<select id="asistio{{i}}" name="asistio{{i}}">
-                    <option value="s">Sí</option>
-                    <option value="n">No</option>
-                </select>
+				   <select id="asistio{{i}}" name="asistio{{i}}">
+                  <option selected></option>
+                  <option value="s">Sí</option>
+                  <option value="n">No</option>
+               </select>
                 </td>
                 <td>
                     <input type="text" id="justificacion{{i}}" name="justificacion{{i}}" placeholder="Justificación">
@@ -38,10 +44,12 @@
             {% endfor %}
             
          </tbody>
-         <td> <button type="submit" name="faltas">Registrar Asistencia</button> </td>
-      </table>	  
+      </table>	
+          <!-- <button type="submit" name="faltas">Registrar Asistencia</button>  -->
+          <td><button type="submit" class="btn btn-primary">Registrar Asistencia</button></td>
       <br><br>
       </div>
+      {% endblock %}
 </body>
     </form>
 </html>

@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informe detallado de asistencias de {{curso.anio}} {{curso.division}}</title>
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <script src="/static/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    
 </head>
+{% extends "base_template.html" %}
+{% block content %}
+<h3>Informe detallado de asistencias de {{curso.anio}}°{{curso.division}}</h3>
       <div class="container">
-      <table>
-         <thead>
+         <table class="table">
+            <thead class="table-dark">
             <tr>
                <th>Nombre </th>  
                <th>Apellido</th>   
@@ -20,7 +26,6 @@
                <th>Total Inasistencias</th>
             </tr>
          </thead>
-
          <tbody>
 <body>
     {% for estudiante in listado %}
@@ -41,6 +46,7 @@
     </table>	  
 <br><br>
 </div>
+{% endblock %}
 </html>
 
 <!-- La aplicación muestra, de cada estudiante cantidad de

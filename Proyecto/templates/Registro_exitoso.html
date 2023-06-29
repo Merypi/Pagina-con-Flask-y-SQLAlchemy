@@ -4,8 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrado con éxito</title>
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <script src="/static/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </head>
+{% extends "base_template.html" %}
+{% block content %}
 <body>
-    
+    <form action="{{url_for('volvermenu')}}" >
+    <h1>La asistencia se registró con exito</h1>
+    <button type="submit" class="btn btn-primary">Volver al menu</button>
 </body>
+    </form>
+{% endblock %}
 </html>

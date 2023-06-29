@@ -1,4 +1,17 @@
-<h1>Cursos asignados</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/static/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+  <script src="/static/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <title>Registrar</title>
+</head>
+<body>
+  {% extends "base_template.html" %}
+  {% block content %}
+<h1>Registrar asistencia</h1>
       <hr/>
       <div class="container">
 
@@ -6,22 +19,32 @@
             <form action="{{url_for('nuevaAsistencia')}}" method="post" >
             
             <label for="cursos">Cursos</label>
-            <select  name="idcurso" class="form-select form-select-lg mb-3">
-            <option selected>Seleccionar cursos</option>
+            <select  name="idcurso" class="form-select form-select-lg mb-3" >
+            <option selected></option>
                 {% for c in prece.curso %}      
                 <option value="{{ c.id }} ">{{ c.anio }} {{ c.division }}</option>
                 {% endfor %}
             </select>
-            
+            <label for="cursos">Tipo de aula</label>
               <select name=clase class="form-select form-select-sm" >
-                <option selected>Seleccionar clase</option>
+                <option selected></option>
                 <option value="1">Aula</option>
                 <option value="2">Ed.Fisica</option>
               </select>
+              <br>
+              
+              <label for="cursos">Seleccione una fecha</label>
+              <br>
               <input type="date" id="fecha" name="fecha"><br>
               <br>
               <br>
-              <td> <button type="submit" name="asistencia">Registrar Asistencia</button> </td>
+              <td><button type="submit"  class="btn btn-info">Registrar Asistencia</button> </td>
       
       </div>
             </form>
+            {%if error%}
+            <p>{{error}} </p> 
+            {%endif%}
+  </body>
+  {% endblock %}
+</html>

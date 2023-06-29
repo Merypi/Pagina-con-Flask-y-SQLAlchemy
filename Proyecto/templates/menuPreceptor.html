@@ -1,4 +1,41 @@
 <!DOCTYPE html>
+<html lang="en">
+  <link href="/static/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+  <script src="/static/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<head>
+  {% extends "base_template.html" %}
+  {% block content %}
+<body>
+  <h2>Le damos la bienvenida {{usuario.nombre}} {{usuario.apellido}}</h2>
+  <div class="row">
+    <div class="col-sm-6 mb-3 mb-sm-0">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Registrar asistencia</h5>
+          <p class="card-text">Para registrar asistencia: seleccionar curso, si es clase de aula o Ed. fisica e ingresar fecha </p>
+          <a href="{{url_for('registrar_asistencia')}}" class="btn btn-primary">Ingresar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-sm-6 mb-3 mb-sm-0">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Informe detallado de asistencias</h5>
+          <p class="card-text">Obtener informe de asistencias e inansistencias de un curso</p>
+          <a href="{{url_for('generar_listado')}}" class="btn btn-primary">Ingresar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+{% endblock %}
+</html>
+<!-- <!DOCTYPE html>
 <link href="/static/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
 <script src="/static/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
@@ -18,5 +55,5 @@
       <a href="{{url_for('generar_listado')}}" >presione aqui</a>
       <p class="card-text">Esta funcion le dara un listado detallado por curso.</p>
     </div>
-  </div>  
+  </div>   -->
  

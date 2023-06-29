@@ -1,12 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>generar Listado</title>
+   <link href="/static/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <script src="/static/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+   
+{% extends "base_template.html" %}
 {% block content %}
  <h1>Cursos asignados</h1>
       <hr/>
       <div class="container">
-      <table>
+         <table class="table table-dark table-striped-columns">
          <thead>
-            <tr>
-               <th>Año</th>  
-               <th>Division</th>             
+            <tr class="table-info">
+               <th class="table-primary">Año</th>  
+               <th class="table-primary">Division</th> 
+               <th class="table-primary"></th>            
             </tr>
          </thead>
 
@@ -15,10 +30,10 @@
             
 
             {% for c in prece.curso %}
-               <tr>
-                  <td>{{ c.anio }}  </td> 
-                  <td>{{ c.division }} </td>
-                  <td> <button type="submit" value="{{c.id}}" name="idcurso">Obtener listado</button> </td>
+               <tr class="table-info">
+                  <td class="table-info">{{ c.anio }}  </td> 
+                  <td class="table-info">{{ c.division }} </td>
+                  <td class="table-info"> <button type="submit" value="{{c.id}}" name="idcurso">Obtener listado</button> </td>
                   <!-- <td><input name="idcurso" type="radio" value="{{c.id}}"></td> -->
                </tr>
             {% endfor %}
@@ -28,4 +43,6 @@
       </table>	  
       <br><br>
       </div>
+   </body>
+   </html>
 {% endblock %}

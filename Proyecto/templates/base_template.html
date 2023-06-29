@@ -6,12 +6,33 @@
     <link rel="stylesheet" href="{{ url_for("static", filename="css/estilos.css") }}">
 </head>
 <body>
-  <!-- {% block content %}{% endblock %}  -->
-    <h2> Colegio San Miguel</h2>
-      <div class="Encabezado">
-        <img class="" src= "LOGO.jpeg" height="100px" width="100px"> 
-			<br><br><a href = "{{ url_for('inicio') }}" > Inicio </a><br><br>
-	  </div>	
-</body>
+ <title>{% block title %}{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingreso Preceptor</title>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" >Colegio San Miguel</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  OPCIONES
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" href="{{url_for('registrar_asistencia')}}">Registrar asistencia</a></li>
+                  <li><a class="dropdown-item" href="{{url_for('generar_listado')}}">Obtener listado de inasistencias</a></li>
+                  <li><a class="dropdown-item" href="{{url_for('volvermenu')}}">Menu principal</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+</head>
+{% block content %}{% endblock %}
 </html>
 

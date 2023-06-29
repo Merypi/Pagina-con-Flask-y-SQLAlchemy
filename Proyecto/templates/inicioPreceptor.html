@@ -23,7 +23,7 @@
         <div class="col-sm-8 main-section">
             <div class="modal-content">
                 <div class="col-12 user-img">
-                    <img src="..\static\img\Logo.png" />
+                    <img src="/static/img/logo2.jfif" />
                 </div>
                 <form class="col-12" action="{{url_for('loginpreceptor')}}" method="post">
                     <div class="form-group" id="user-preceptor">
@@ -38,5 +38,8 @@
             </div>
         </div>
     </div>
+    {%if error%}
+    <p>{{error}} </p> 
+    {%endif%}
 </body>
 </html>
